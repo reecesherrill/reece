@@ -57,3 +57,190 @@ nav a {
   display: flex;
   align-items: center;     /* Vertically center text */
   justify-content: center; /* Horizontally center*
+
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fore Right — Play Golf Fast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#0f9d58;
+      --dark-green:#0b7a43;
+      --muted:#f6f9f6;
+      --text:#16321a;
+      --card:#ffffff;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#ffffff);color:var(--text);}
+    .wrap{max-width:1100px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--green),var(--dark-green));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+    h1{margin:0;font-size:22px}
+    .tag{font-size:12px;color:rgba(0,0,0,0.5)}
+
+    .layout{display:grid;grid-template-columns:1fr 380px;gap:28px}
+
+    /* left column */
+    .panel{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 20px rgba(13,40,18,0.06)}
+    .courses h2{margin-top:0}
+    .course-list{display:grid;gap:10px}
+    .course{padding:12px;border-radius:10px;border:1px solid rgba(11,122,67,0.08);display:flex;justify-content:space-between;align-items:center}
+    .course strong{display:block}
+
+    .tee-times{margin-top:18px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;text-align:left;border-bottom:1px dashed #e6efe8}
+    th{font-size:13px;color:#2b2b2b}
+
+    /* right column */
+    .auth{position:sticky;top:24px}
+    .login{padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #f7fffa);border:1px solid rgba(15,157,88,0.08)}
+    .login h3{margin:0 0 8px 0}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    .field label{font-size:12px;margin-bottom:6px;color:rgba(0,0,0,0.6)}
+    .field input{padding:10px;border-radius:8px;border:1px solid #e6efe8}
+    .actions{display:flex;gap:8px;align-items:center}
+
+    .btn{background:var(--green);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(11,122,67,0.12);color:var(--text)}
+
+    .select-golfers{display:flex;gap:8px;margin:12px 0}
+    .golf-btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(11,122,67,0.08);cursor:pointer;background:transparent}
+    .golf-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+    .about{margin-top:18px;padding:14px;border-radius:10px;background:#fbfff9;border:1px solid rgba(11,122,67,0.04)}
+
+    footer{margin-top:18px;text-align:center;color:rgba(0,0,0,0.6);font-size:13px}
+
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      .auth{position:relative;top:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">FR</div>
+        <div>
+          <h1>Fore Right</h1>
+          <div class="tag">Green and White Minimalist Golf Club Presentation — Play Golf Fast</div>
+        </div>
+      </div>
+      <nav>
+        <button class="btn" onclick="scrollToSection('courses')">GOLF COURSES NEAR YOU</button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel courses" id="courses">
+        <h2>GOLF COURSES NEAR YOU</h2>
+        <div class="course-list">
+          <div class="course"><div><strong>VALLEY LINKS GOLF COURSE</strong><small> — Public</small></div><div>⛳</div></div>
+          <div class="course"><div><strong>THE PETE DYE COURSE</strong><small> — Championship</small></div><div>⛳</div></div>
+          <div class="course"><div><strong>THE DONALD ROSS COURSE</strong><small> — Historic</small></div><div>⛳</div></div>
+          <div class="course"><div><strong>OTIS PARK GOLD CLUB</strong><small> — Private</small></div><div>⛳</div></div>
+          <div class="course"><div><strong>LUCAS OIL GOLF CLUB</strong><small> — Resort</small></div><div>⛳</div></div>
+        </div>
+
+        <div style="margin-top:18px">
+          <h3 style="margin:0 0 8px 0">SELECT NUMBER OF GOLFERS</h3>
+          <div class="select-golfers" role="tablist" aria-label="Number of golfers">
+            <button class="golf-btn" onclick="setGolfers(1)">1</button>
+            <button class="golf-btn" onclick="setGolfers(2)">2</button>
+            <button class="golf-btn" onclick="setGolfers(3)">3</button>
+            <button class="golf-btn" onclick="setGolfers(4)">4</button>
+          </div>
+        </div>
+
+        <div class="tee-times">
+          <h3>TEE TIMES AVAILABLE &amp; PRICING</h3>
+          <table>
+            <thead>
+              <tr><th>Time</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>7:00 A.M.</td><td>$60</td></tr>
+              <tr><td>7:15 A.M.</td><td>$58</td></tr>
+              <tr><td>7:30 A.M.</td><td>$55</td></tr>
+              <tr><td>7:45 A.M.</td><td>$60</td></tr>
+              <tr><td>8:00 A.M.</td><td>$62</td></tr>
+              <tr><td>12:15 P.M.</td><td>$71</td></tr>
+              <tr><td>12:45 P.M.</td><td>$71</td></tr>
+              <tr><td>3:30 P.M.</td><td>$62</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="about">
+          <h3>About Us</h3>
+          <p style="margin:6px 0 0 0"><strong>FORE RIGHT</strong><br>
+          The goal of Fore Right is to allow golfers to find local tee times easily. Being able to get on our website allows the golfer to grab a tee time at any time.</p>
+          <p style="margin:6px 0 0 0">Fore Right was created and owned by Reece Sherrill.</p>
+        </div>
+
+      </section>
+
+      <aside class="auth">
+        <div class="panel login">
+          <h3>Log in</h3>
+          <div class="field"><label for="username">USERNAME:</label><input id="username" placeholder="Enter username"></div>
+          <div class="field"><label for="password">PASSWORD:</label><input id="password" type="password" placeholder="Enter password"></div>
+          <div style="font-size:12px;margin-bottom:8px;color:rgba(0,0,0,0.6)">Log in or <a href="#">Sign up</a> — <a href="#">Forgot password?</a></div>
+
+          <div class="actions">
+            <button class="btn" onclick="login()">Log in</button>
+            <button class="ghost" onclick="guest()">Continue as Guest</button>
+          </div>
+
+          <div style="margin-top:12px;font-size:13px;color:rgba(0,0,0,0.7)">Selected golfers: <span id="selectedCount">1</span></div>
+        </div>
+
+        <div style="height:18px"></div>
+        <div class="panel" style="padding:14px;text-align:center">
+          <h4 style="margin:0">THANK YOU</h4>
+          <div style="font-size:13px;color:rgba(0,0,0,0.7);margin-top:6px">FORE RIGHT</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Fore Right — CREATED BY REECE SHERRILL
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // default golfers
+    let golfers = 1;
+    function setGolfers(n){
+      golfers = n;
+      document.getElementById('selectedCount').textContent = n;
+      document.querySelectorAll('.golf-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.golf-btn')[n-1].classList.add('active');
+    }
+    // initialize first button
+    setGolfers(1);
+
+    function login(){
+      const u = document.getElementById('username').value.trim();
+      alert(u ? `Welcome back, ${u}!` : 'Please enter a username to log in.');
+    }
+    function guest(){
+      alert('Continuing as guest — search tee times and book quickly!');
+    }
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
